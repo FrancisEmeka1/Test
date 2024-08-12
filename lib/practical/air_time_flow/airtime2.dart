@@ -6,6 +6,7 @@ import 'package:get/get_core/src/get_main.dart';
 
 import '../dashboard/dash_1.dart';
 import '../onboarding_flow/container.dart';
+import 'air_time3A.dart';
 
 class Airtime_2 extends StatefulWidget {
   const Airtime_2({super.key});
@@ -284,7 +285,12 @@ class _Airtime_2State extends State<Airtime_2> {
              ),
            ),
             Gap(30),
-            CustomContainer()
+            GestureDetector(
+                onTap: (){
+                  Get.to(Pin_code());
+                },
+
+                child: CustomContainer())
           ],
         ),
       ),

@@ -7,6 +7,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../screens/bottomNav.dart';
 import '../sign_up_flow/sign_up.dart';
 
 class signInLogin extends StatefulWidget {
@@ -73,7 +74,9 @@ class _signInLoginState extends State<signInLogin> {
             ),
             Gap(100),
             GestureDetector(
-                onTap: (){},
+                onTap: (){
+                  Get.to(BottomNav());
+                },
 
                 child: CustomContainer()),
             Gap(10),

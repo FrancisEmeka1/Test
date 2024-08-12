@@ -1,6 +1,9 @@
+import 'package:billspaymentapp/practical/sign_up_flow/sign_up_otp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class SignUP_PN extends StatefulWidget {
   const SignUP_PN({super.key});
@@ -54,19 +57,24 @@ class _SignUP_PNState extends State<SignUP_PN> {
 
              ),
             Gap(30),
-            Container(
-              height: 48.h,
-              width: 320.w,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),color: Colors.blue.shade300,
-              ),
-              child:
-              Center(
-                child: Text(
-                  'Continue', style: TextStyle(
-                  fontWeight: FontWeight.w500,fontSize: 18, color: Colors.white
+            GestureDetector(
+              onTap: (){
+                Get.to(SignUpOTP());
+              },
+              child: Container(
+                height: 48.h,
+                width: 320.w,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),color: Colors.blue.shade300,
                 ),
-                  textAlign: TextAlign.center,
+                child:
+                Center(
+                  child: Text(
+                    'Continue', style: TextStyle(
+                    fontWeight: FontWeight.w500,fontSize: 18, color: Colors.white
+                  ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
             )

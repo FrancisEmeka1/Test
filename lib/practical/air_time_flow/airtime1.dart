@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 import '../dashboard/dash_1.dart';
+import 'airtime2.dart';
 
 class ScreenAirtime_1 extends StatefulWidget {
   const ScreenAirtime_1({super.key});
@@ -228,7 +229,11 @@ class _ScreenAirtime_1State extends State<ScreenAirtime_1> {
               ],
             ),
             Gap(20),
-            CustomContainer()
+            GestureDetector(
+                onTap: (){
+                  Get.to(Airtime_2());
+                },
+                child: CustomContainer())
           ],
         ),
       ),

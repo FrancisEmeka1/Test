@@ -3,7 +3,12 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../air_time_flow/airtime1.dart';
+import '../electricity_flow/electricity_1.dart';
 
 class Dash1 extends StatefulWidget {
   const Dash1({super.key});
@@ -150,28 +155,33 @@ class _Dash1State extends State<Dash1> {
               Gap(20),
               Row(
                 children: [
-                  Container(
-                    height: 109.h,
-                    width: 101.w,
-                    color: Color(0xffF6ECFF),
-                  child:
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.call),
-                          Text('Airtime Recharge',style: TextStyle(
-                            fontSize: 16,fontWeight: FontWeight.w500,color: Color(
-                            0xff00062A
-                          ),
-                          ),
-                          textAlign: TextAlign.center,
-                          )
-                          
-                        ],
-                      )
-                    
-                  
-                    ),
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(ScreenAirtime_1());
+                    },
+                    child: Container(
+                      height: 109.h,
+                      width: 101.w,
+                      color: Color(0xffF6ECFF),
+                    child:
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.call),
+                            Text('Airtime Recharge',style: TextStyle(
+                              fontSize: 16,fontWeight: FontWeight.w500,color: Color(
+                              0xff00062A
+                            ),
+                            ),
+                            textAlign: TextAlign.center,
+                            )
+
+                          ],
+                        )
+
+
+                      ),
+                  ),
                   Gap(15),
                   Container(
                       height: 109.h,
@@ -224,27 +234,32 @@ class _Dash1State extends State<Dash1> {
               Gap(15),
               Row(
                 children: [
-                  Container(
-                      height: 109.h,
-                      width: 101.w,
-                      color: Color(0xffE6ECFF),
-                      child:
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.call),
-                          Text('Airtime Recharge',style: TextStyle(
-                            fontSize: 16,fontWeight: FontWeight.w500,color: Color(
-                              0xff00062A
-                          ),
-                          ),
-                            textAlign: TextAlign.center,
-                          )
-        
-                        ],
-                      )
-        
-        
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(ElectricityFlow1());
+                    },
+                    child: Container(
+                        height: 109.h,
+                        width: 101.w,
+                        color: Color(0xffE6ECFF),
+                        child:
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.electric_bolt),
+                            Text('Electricity',style: TextStyle(
+                              fontSize: 16,fontWeight: FontWeight.w500,color: Color(
+                                0xff00062A
+                            ),
+                            ),
+                              textAlign: TextAlign.center,
+                            )
+
+                          ],
+                        )
+
+
+                    ),
                   ),
                   Gap(15),
                   Container(

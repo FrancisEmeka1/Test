@@ -4,6 +4,9 @@ import 'package:billspaymentapp/practical/air_time_flow/airtime2.dart';
 import 'package:billspaymentapp/practical/air_time_flow/airtime3.dart';
 import 'package:billspaymentapp/practical/air_time_flow/airtime4.dart';
 import 'package:billspaymentapp/practical/dashboard/dash_1.dart';
+import 'package:billspaymentapp/practical/electricity_flow/electricity_1.dart';
+import 'package:billspaymentapp/practical/electricity_flow/electricity_flow2.dart';
+import 'package:billspaymentapp/practical/electricity_flow/electricity_flow3.dart';
 import 'package:billspaymentapp/practical/onboarding_flow/onboardingView.dart';
 import 'package:billspaymentapp/practical/sign_in_flow/login.dart';
 import 'package:billspaymentapp/practical/sign_in_flow/sign_in_reset_p.dart';
@@ -12,6 +15,7 @@ import 'package:billspaymentapp/practical/sign_up_flow/sign_up_otp.dart';
 import 'package:billspaymentapp/practical/sign_up_flow/sign_up_pin.dart';
 import 'package:billspaymentapp/practical/sign_up_flow/sign_up_pn.dart';
 import 'package:billspaymentapp/practical/sign_up_flow/sign_up_vc.dart';
+import 'package:billspaymentapp/screens/bottomNav.dart';
 import 'package:billspaymentapp/screens/onboarding/onboardingScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,11 +35,10 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       child: GetMaterialApp(
         debugShowCheckedModeBanner: true,
-        title: 'Test',
+        title: 'Electricity_Pin',
       
-        // home: const OnboardingScreen(),
-        home: Airtime_4(),
-
+         home:  Onboarding_Screens(),
+       // home:ElectricityFlow1(),
 
       ),
     );

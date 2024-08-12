@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import 'airtime3.dart';
 
 class Airtime_4 extends StatefulWidget {
   const Airtime_4({super.key});
@@ -17,6 +21,12 @@ class _Airtime_4State extends State<Airtime_4> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            GestureDetector(
+              onTap: (){
+                Get.to(());
+              },
+
+                child: Icon(Icons.arrow_back)),
             CircleAvatar(
               radius: 30,
               backgroundImage: AssetImage('images/good.png'),

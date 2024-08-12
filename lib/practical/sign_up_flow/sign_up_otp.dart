@@ -1,6 +1,12 @@
+import 'package:billspaymentapp/practical/sign_up_flow/sign_up_vc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
+
+import '../electricity_flow/electricity_flow3.dart';
 
 class SignUpOTP extends StatefulWidget {
   const SignUpOTP({super.key});
@@ -35,76 +41,26 @@ class _SignUpOTPState extends State<SignUpOTP> {
             textAlign: TextAlign.start,
             ),
             Gap(80),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  height: 48.h,
-                  width: 71.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: TextField(
-                    keyboardType: TextInputType.number,
-                     decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                  ),
-                )
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  height: 48.h,
-                  width: 71.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      )
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  height: 48.h,
-                  width: 71.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      )
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  height: 48.h,
-                  width: 71.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      )
-                  ),
-                ),
-
-              ],
+            PinCodeTextField(
+              appContext: context,
+              length: 4, // Number of digits
+              onChanged: (value) {
+                if(value.length==4){
+                  Get.to(SignUpVC());
+                }
+                // Handle changes
+              },
+              pinTheme: PinTheme(
+                  shape: PinCodeFieldShape.circle,
+                  fieldHeight: 50.h,
+                  fieldWidth: 50.w,
+                  activeColor: Colors.grey,
+                  inactiveColor: Colors.grey,
+                  selectedFillColor: Colors.grey,
+                  selectedColor: Colors.grey
+              ),
+              keyboardType: TextInputType.number,
+              obscureText: true, // Hide the input text for security
             ),
             Gap(35),
             Row(

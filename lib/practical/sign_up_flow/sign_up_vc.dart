@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+
+import '../../screens/bottomNav.dart';
 
 class SignUpVC extends StatefulWidget {
   const SignUpVC({super.key});
@@ -34,11 +37,16 @@ class _SignUpVCState extends State<SignUpVC> {
           textAlign: TextAlign.center,
         ),
             Gap(35),
-            Text('Take Me to Dashboard', style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w400,
-              color: Colors.blue
-            ),
-              textAlign: TextAlign.center,
+            GestureDetector(
+              onTap: (){
+                Get.to(BottomNav());
+              },
+              child: Text('Take Me to Dashboard', style: TextStyle(
+                fontSize: 18, fontWeight: FontWeight.w400,
+                color: Colors.blue
+              ),
+                textAlign: TextAlign.center,
+              ),
             )
 
           ],

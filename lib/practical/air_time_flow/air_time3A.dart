@@ -6,6 +6,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import 'airtime2.dart';
+import 'airtime4.dart';
 
 class Pin_code extends StatefulWidget {
   const Pin_code({super.key});
@@ -53,13 +54,17 @@ class _Pin_codeState extends State<Pin_code> {
           length: 5, // Number of digits
           onChanged: (value) {
             // Handle changes
+            if(value.length==5){
+              Get.to(Airtime_4());
+
+            }
           },
           pinTheme: PinTheme(
-            shape: PinCodeFieldShape.box,
-            borderRadius: BorderRadius.circular(150),
-            fieldHeight: 50,
-            fieldWidth: 40,
+            shape: PinCodeFieldShape.circle,
+            fieldHeight: 50.h,
+            fieldWidth: 50.w,
             activeFillColor: Colors.white,
+            inactiveColor: Colors.blue,
           ),
           keyboardType: TextInputType.number,
           obscureText: true, // Hide the input text for security
