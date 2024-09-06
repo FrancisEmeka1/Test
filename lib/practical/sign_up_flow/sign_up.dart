@@ -20,167 +20,171 @@ class _SignUp1State extends State<SignUp1> {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 150,),
-              Text('Get Started with Crystal', style: TextStyle(
-                fontSize: 24, fontWeight: FontWeight.w700, color: Colors.black
-              ),),
-              Text('Enjoy seamless services on signing up!',style: TextStyle(
-                fontSize: 18,
-              ),),
-              Gap(20),
-              Row(
-                children: [
-                  Align(
-                   alignment: Alignment.center,
-                  ),
-                   SizedBox(
-              height: 48.h,
-                width: 140.w,
-                      child:
-                      TextField
-                        (style: TextStyle(
-                           fontSize: 24, color: Colors.black
-                         ),
-                           decoration: InputDecoration(
-                             labelText: "First Name",
-                             border: OutlineInputBorder(
-                               borderRadius: BorderRadius.circular(30),
-                             )
-                           ),
-
-                         ),
-                   ),
-                  Gap(20),
-                  SizedBox(
-                    height: 48.h,
-                    width: 140.w,
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 100.h,),
+            Text('Get Started with Crystal', style: TextStyle(
+              fontSize: 24, fontWeight: FontWeight.w700, color: Colors.black
+            ),),
+            Text('Enjoy seamless services on signing up!',style: TextStyle(
+              fontSize: 18,
+            ),),
+            Gap(20),
+            Row(
+              children: [
+                Align(
+                 alignment: Alignment.center,
+                ),
+                 SizedBox(
+            height: 48.h,
+              width: 140.w,
                     child:
                     TextField
                       (style: TextStyle(
-                        fontSize: 24, color: Colors.black
+                         fontSize: 24, color: Colors.black
+                       ),
+                         decoration: InputDecoration(
+                           labelText: "First Name",
+                           border: OutlineInputBorder(
+                             borderRadius: BorderRadius.circular(30),
+                           )
+                         ),
+
+                       ),
+                 ),
+                Gap(20),
+                SizedBox(
+                  height: 48.h,
+                  width: 140.w,
+                  child:
+                  TextField
+                    (style: TextStyle(
+                      fontSize: 24, color: Colors.black
+                  ),
+                    decoration: InputDecoration(
+                        labelText: "Last Name",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        )
                     ),
-                      decoration: InputDecoration(
-                          labelText: "Last Name",
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          )
-                      ),
 
-                    ),
                   ),
-                ],
+                ),
+              ],
+            ),
+            Gap(20),
+            SizedBox(
+              height: 48.h,
+              width: 343.w,
+              child:
+              TextField
+                (style: TextStyle(
+                  fontSize: 24, color: Colors.black
               ),
-              Gap(20),
-              SizedBox(
-                height: 48.h,
-                width: 343.w,
-                child:
-                TextField
-                  (style: TextStyle(
-                    fontSize: 24, color: Colors.black
+                decoration: InputDecoration(
+                    labelText: "Username",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    )
                 ),
-                  decoration: InputDecoration(
-                      labelText: "Username",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      )
-                  ),
 
-                ),
               ),
-              Gap(20),
-              SizedBox(
-                height: 48.h,
-                width: 343.w,
-                child:
-                CustomPassword()
+            ),
+            Gap(20),
+            SizedBox(
+              height: 48.h,
+              width: 343.w,
+              child:
+              CustomPassword()
 
-                ),
-
-              Gap(20),
-              SizedBox(
-                height: 48.h,
-                width: 343.w,
-                child:
-                TextField
-                  (style: TextStyle(
-                    fontSize: 24, color: Colors.black
-                ),
-                  decoration: InputDecoration(
-                      labelText: "Referer Code  (optional)",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      )
-                  ),
-
-                ),
               ),
-              Gap(20),
-              Container(
-                height: 50.h,
-                width: 343.w,
-                child: const Row(
-                  children: [
-                    Icon(Icons.check_circle_outline),
-                    Gap(10),
-                    Text(' have read the terms and condition of this'
-                        ' blabla app.', style: TextStyle(
+
+            Gap(20),
+            SizedBox(
+              height: 48.h,
+              width: 343.w,
+              child:
+              TextField
+                (style: TextStyle(
+                  fontSize: 24, color: Colors.black
+              ),
+                decoration: InputDecoration(
+                    labelText: "Referer Code  (optional)",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    )
+                ),
+
+              ),
+            ),
+            Gap(20),
+            Container(
+              height: 50.h,
+              width: 343.w,
+              child: const Row(
+                children: [
+                  Icon(Icons.check_circle_outline),
+                  Gap(10),
+                  SizedBox(
+                    height: 70,
+                    width: 300,
+                    child: Text(' have read the terms and condition of this '
+                        ' app.',
+                      maxLines: 2,
+                      style: TextStyle(
+
                       fontSize: 18, fontWeight: FontWeight.w400
                     ),
 
                     ),
+                  ),
 
-                  ],
-                ),
-              ),
-              Gap(30),
-              GestureDetector(
-                onTap: (){
-                  Get.to(SignUP_PN());
-                },
-                child: Container(
-                  height: 48.h,
-                  width: 320.w,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
-                  color: Colors.blue.shade300,
-                ),
-                   child:
-                  const Padding(
-                   padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Center(
-                      child: Text('Continue',style: TextStyle(color: Colors.white,fontSize: 24),
-                        ),
-                    ),
-                  ),
-                ),
-              ),
-              Gap(30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Have an account?', style: TextStyle(color: Colors.black,
-                  fontSize: 18, fontWeight: FontWeight.w500
-                  ),
-                  ),
-                  GestureDetector(
-                    onTap: (){
-                      Get.to(signInLogin());
-                    },
-                    child: Text(' Sign In', style: TextStyle(color: Colors.blue,
-                    fontSize: 18, fontWeight: FontWeight.w500),),
-                  )
                 ],
-              )
+              ),
+            ),
+            Gap(30),
+            GestureDetector(
+              onTap: (){
+                Get.to(SignUP_PN());
+              },
+              child: Container(
+                height: 48.h,
+                width: 320.w,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
+                color: Colors.blue.shade300,
+              ),
+                 child:
+                const Padding(
+                 padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Center(
+                    child: Text('Continue',style: TextStyle(color: Colors.white,fontSize: 24),
+                      ),
+                  ),
+                ),
+              ),
+            ),
+            Gap(30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Have an account?', style: TextStyle(color: Colors.black,
+                fontSize: 18, fontWeight: FontWeight.w500
+                ),
+                ),
+                GestureDetector(
+                  onTap: (){
+                    Get.to(signInLogin());
+                  },
+                  child: Text(' Sign In', style: TextStyle(color: Colors.blue,
+                  fontSize: 18, fontWeight: FontWeight.w500),),
+                )
+              ],
+            )
 
-            ],
+          ],
 
-          ),
         ),
       ),
     );

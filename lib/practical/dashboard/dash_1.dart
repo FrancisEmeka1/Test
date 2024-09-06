@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -8,7 +9,13 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../air_time_flow/airtime1.dart';
+import '../bulkData/bulkData1.dart';
+import '../bulkDataMain/bulkDataMain1.dart';
+import '../bulkRechard/bulkData1.dart';
+import '../cable_flow/cable_flow1.dart';
+import '../data_flow/data_flow_1.dart';
 import '../electricity_flow/electricity_1.dart';
+import '../transactional_history/transactional_histiry1.dart';
 
 class Dash1 extends StatefulWidget {
   const Dash1({super.key});
@@ -19,9 +26,10 @@ class Dash1 extends StatefulWidget {
 
 class _Dash1State extends State<Dash1> {
   bool isVisible=true;
-
+  final dio =Dio();
   final pageController = PageController();
   int currentIndex=0;
+  bool isLoading =false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -147,6 +155,9 @@ class _Dash1State extends State<Dash1> {
         
         
           ),
+              Visibility(
+                  visible: isLoading,
+                  child: CircularProgressIndicator()),
               Gap(30),
               Text('Services',style: TextStyle(fontWeight: FontWeight.w900,
                   fontSize: 24),
@@ -157,7 +168,8 @@ class _Dash1State extends State<Dash1> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                      Get.to(ScreenAirtime_1());
+                     // Get.to(ScreenAirtime_1());
+                      testingHTTP();
                     },
                     child: Container(
                       height: 109.h,
@@ -183,50 +195,64 @@ class _Dash1State extends State<Dash1> {
                       ),
                   ),
                   Gap(15),
-                  Container(
-                      height: 109.h,
-                      width: 101.w,
-                      color: Color(0xffE8ECFF),
-                      child:
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.call),
-                          Text('Airtime Recharge',style: TextStyle(
-                            fontSize: 16,fontWeight: FontWeight.w500,color: Color(
-                              0xff00062A
-                          ),
-                          ),
-                            textAlign: TextAlign.center,
-                          )
-        
-                        ],
-                      )
-        
-        
+                  GestureDetector(
+                    onTap:(){
+                      Get.to(DataFlow1());
+                    },
+
+
+                    child: Container(
+                        height: 109.h,
+                        width: 101.w,
+                        color: Color(0xffE8ECFF),
+                        child:
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.network_check),
+                            Text('Data Subscription',style: TextStyle(
+                              fontSize: 16,fontWeight: FontWeight.w500,color: Color(
+                                0xff00062A
+                            ),
+                            ),
+                              textAlign: TextAlign.center,
+                            )
+
+                          ],
+                        )
+
+
+                    ),
                   ),
                   Gap(15),
-                  Container(
-                      height: 109.h,
-                      width: 101.w,
-                      color: Color(0xffF6ECFF),
-                      child:
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.call),
-                          Text('Airtime Recharge',style: TextStyle(
-                            fontSize: 16,fontWeight: FontWeight.w500,color: Color(
-                              0xff00062A
-                          ),
-                          ),
-                            textAlign: TextAlign.center,
-                          )
-        
-                        ],
-                      )
-        
-        
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(Cable_Flow1());
+                    },
+
+
+                    child: Container(
+                        height: 109.h,
+                        width: 101.w,
+                        color: Color(0xffF6ECFF),
+                        child:
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.tab_sharp),
+                            Text('Cable Subscription',style: TextStyle(
+                              fontSize: 16,fontWeight: FontWeight.w500,color: Color(
+                                0xff00062A
+                            ),
+                            ),
+                              textAlign: TextAlign.center,
+                            )
+
+                          ],
+                        )
+
+
+                    ),
                   ),
         
                 ],
@@ -262,50 +288,61 @@ class _Dash1State extends State<Dash1> {
                     ),
                   ),
                   Gap(15),
-                  Container(
-                      height: 109.h,
-                      width: 101.w,
-                      color: Color(0xffF8ECFF),
-                      child:
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.call),
-                          Text('Airtime Recharge',style: TextStyle(
-                            fontSize: 16,fontWeight: FontWeight.w500,color: Color(
-                              0xff00062A
-                          ),
-                          ),
-                            textAlign: TextAlign.center,
-                          )
-        
-                        ],
-                      )
-        
-        
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(BulkData());
+                    },
+                    child: Container(
+                        height: 109.h,
+                        width: 101.w,
+                        color: Color(0xffF8ECFF),
+                        child:
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.sports_basketball_outlined),
+                            Text('Bulk   Recharge',style: TextStyle(
+                              fontSize: 16,fontWeight: FontWeight.w500,color: Color(
+                                0xff00062A
+                            ),
+                            ),
+                              textAlign: TextAlign.center,
+                            )
+
+                          ],
+                        )
+
+
+                    ),
                   ),
                   Gap(15),
-                  Container(
-                      height: 109.h,
-                      width: 101.w,
-                      color: Color(0xffE6ECFF),
-                      child:
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.call),
-                          Text('Airtime Recharge',style: TextStyle(
-                            fontSize: 16,fontWeight: FontWeight.w500,color: Color(
-                              0xff00062A
-                          ),
-                          ),
-                            textAlign: TextAlign.center,
-                          )
-        
-                        ],
-                      )
-        
-        
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(BulkData());
+                    },
+
+                    child: Container(
+                        height: 109.h,
+                        width: 101.w,
+                        color: Color(0xffE6ECFF),
+                        child:
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.sports_basketball_outlined),
+                            Text('Bulk Data Subscription',style: TextStyle(
+                              fontSize: 16,fontWeight: FontWeight.w500,color: Color(
+                                0xff00062A
+                            ),
+                            ),
+                              textAlign: TextAlign.center,
+                            )
+
+                          ],
+                        )
+
+
+                    ),
                   ),
         
                 ],
@@ -328,44 +365,49 @@ class _Dash1State extends State<Dash1> {
                 ],
               ),
               Gap(15),
-              Container(
-                height: 81.h,
-                width: 343.w,
-                decoration: BoxDecoration(
-                  color: Color(0xffF5F5F5)
-                ),
-                child: Row(
-                  children: [
-                    Icon(Icons.call),
-                    Gap(90),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text('Airtime recharge ',style: TextStyle(
-                          fontWeight: FontWeight.w700,fontSize: 16,color: Color(0xff00062A)
-                        ),
+              GestureDetector(
+                onTap: (){
+                  Get.to(Transactional_History1());
+                },
+                child: Container(
+                  height: 81.h,
+                  width: 343.w,
+                  decoration: BoxDecoration(
+                    color: Color(0xffF5F5F5)
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.call),
+                      Gap(90),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text('Airtime recharge ',style: TextStyle(
+                            fontWeight: FontWeight.w700,fontSize: 16,color: Color(0xff00062A)
+                          ),
+                            textAlign: TextAlign.center,
+                          ),
+                          Gap(5),
+                          Text('7th July, 2023', style: TextStyle(
+                            fontSize: 14,fontWeight: FontWeight.w400,color: Color(0xff00062A),
+                          ),
                           textAlign: TextAlign.center,
-                        ),
-                        Gap(5),
-                        Text('7th July, 2023', style: TextStyle(
-                          fontSize: 14,fontWeight: FontWeight.w400,color: Color(0xff00062A),
-                        ),
-                        textAlign: TextAlign.center,
-                        )
-                      ],
-                    ),
-                    Gap(50),
-                    Text('₦2000',style: TextStyle(
-                      fontWeight: FontWeight.w500,fontSize: 14, color: Color(
-                      0xff00062A
-                    )
-                    ),
-                      textAlign: TextAlign.right,
-                    )
-                  ],
-                ),
+                          )
+                        ],
+                      ),
+                      Gap(50),
+                      Text('₦2000',style: TextStyle(
+                        fontWeight: FontWeight.w500,fontSize: 14, color: Color(
+                        0xff00062A
+                      )
+                      ),
+                        textAlign: TextAlign.right,
+                      )
+                    ],
+                  ),
 
+                ),
               ),
               Gap(15),
               Container(
@@ -454,6 +496,17 @@ class _Dash1State extends State<Dash1> {
              ),
       )
     );
+  }
+
+  testingHTTP()async{
+    setState(() {
+      isLoading=true;
+    });
+    final response = await dio.get('https://dart.dev');
+    setState(() {
+      isLoading=false;
+    });
+    print(response);
   }
 }
 List<String>adImage =['images/MTN.png','images/Airtel.png',

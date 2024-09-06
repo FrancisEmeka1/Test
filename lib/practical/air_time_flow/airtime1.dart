@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
+import '../../screens/bottomNav.dart';
 import '../dashboard/dash_1.dart';
 import 'airtime2.dart';
 
@@ -29,7 +30,7 @@ class _ScreenAirtime_1State extends State<ScreenAirtime_1> {
               children: [
                 GestureDetector(
                     onTap: (){
-                      Get.to(Dash1());
+                      Get.to(BottomNav());
 
                     },
 

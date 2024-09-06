@@ -3,7 +3,10 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import 'airtime3.dart';
+import '../../screens/bottomNav.dart';
+import '../dashboard/dash_1.dart';
+import 'airtime2.dart';
+
 
 class Airtime_4 extends StatefulWidget {
   const Airtime_4({super.key});
@@ -23,10 +26,15 @@ class _Airtime_4State extends State<Airtime_4> {
           children: [
             GestureDetector(
               onTap: (){
-                Get.to(());
+                Get.to(Airtime_2 ());
               },
 
-                child: Icon(Icons.arrow_back)),
+                child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Icon(Icons.arrow_back))
+
+            ),
+            Gap(15),
             CircleAvatar(
               radius: 30,
               backgroundImage: AssetImage('images/good.png'),
@@ -34,26 +42,33 @@ class _Airtime_4State extends State<Airtime_4> {
 
             //this is a test
             Gap(30),
-            Text('Data Successful',style: TextStyle(
+            Text('Recharge Successful',style: TextStyle(
               fontWeight: FontWeight.w700,fontSize: 24
             ),
             textAlign: TextAlign.center,
             ),
-            Text('Your data subscription of 5GB has been completed successfully.'
-                ' Please click on the button to your dashboard',style: TextStyle(
+            Text('Your airtime recharge of 500 naira has been completed. '
+                'Please click on the button to your dashboard',style: TextStyle(
               fontSize: 18,fontWeight: FontWeight.w400
             ),
             textAlign: TextAlign.center,
             ),
             Gap(80),
-            Text('Take Me to Dashboard',style: TextStyle(
-                decoration: TextDecoration.underline,
-              fontWeight: FontWeight.w400,fontSize: 18, color: Color(0xff2937F0
+            GestureDetector(
+              onTap: (){
+                Get.to(BottomNav());
+              },
+              child: Text('Take Me to Dashboard',style: TextStyle(
+                  decoration: TextDecoration.underline,
+                fontWeight: FontWeight.w400,fontSize: 18, color: Color(0xff2937F0
+              )
+              ),),
             )
-            ),)
           ],
         ),
       ),
     );
   }
 }
+
+

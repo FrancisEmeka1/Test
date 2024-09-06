@@ -4,7 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../practical/ac_manager/ac_manager.dart';
 import '../practical/dashboard/dash_1.dart';
+import '../practical/transactional_history/transactional_histiry1.dart';
+import '../practical/wallet/walletPhase1.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
@@ -18,15 +21,11 @@ class _BottomNavState extends State<BottomNav> {
 
   List _pages = [
     Dash1(),
-    Center(
-      child: Text("About"),
-    ),
-    Center(
-      child: Text("Products"),
-    ),
-    Center(
-      child: Text("Contact"),
-    ),
+  Transactional_History1(),
+
+  Walletphase1(),
+
+    AC_Profile()
 
   ];
 
@@ -43,11 +42,13 @@ class _BottomNavState extends State<BottomNav> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTab,
         onTap: (index) => _changeTab(index),
-        selectedItemColor: Colors.red,
+        selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: "Record"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.book), label: "Record"),
           BottomNavigationBarItem(
               icon: Icon(Icons.wallet), label: "Wallet"),
           BottomNavigationBarItem(

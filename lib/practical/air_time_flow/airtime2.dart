@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../screens/bottomsheet/airtimeBottomsheet1.dart';
 import '../dashboard/dash_1.dart';
 import '../onboarding_flow/container.dart';
 import 'air_time3A.dart';
@@ -287,10 +288,18 @@ class _Airtime_2State extends State<Airtime_2> {
             Gap(30),
             GestureDetector(
                 onTap: (){
-                  Get.to(Pin_code());
+                  showModalBottomSheet( builder:(context){
+                    return Container(
+                        height: 300.h,
+                        child: AirtelBottomSheet()
+                    );
+
+                  },
+                   context: context);
                 },
 
-                child: CustomContainer())
+                child: CustomContainer()),
+
           ],
         ),
       ),

@@ -63,8 +63,10 @@ class _Pin_codeState extends State<Pin_code> {
             shape: PinCodeFieldShape.circle,
             fieldHeight: 50.h,
             fieldWidth: 50.w,
-            activeFillColor: Colors.white,
-            inactiveColor: Colors.blue,
+            activeFillColor: Colors.grey,
+            inactiveColor: Colors.grey,
+            selectedFillColor: Colors.grey,
+            selectedColor: Colors.grey
           ),
           keyboardType: TextInputType.number,
           obscureText: true, // Hide the input text for security

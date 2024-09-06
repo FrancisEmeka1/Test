@@ -73,7 +73,8 @@ class _Onboarding_ScreensState extends State<Onboarding_Screens> {
                             }
 
                           },
-                          child:SmoothPageIndicator(controller: pageController,count: 3,
+                          child:SmoothPageIndicator(controller: pageController,
+                            count: 3,
                             effect: const ExpandingDotsEffect(
                                 activeDotColor: Colors.blue,
                                 dotColor: Colors.grey,

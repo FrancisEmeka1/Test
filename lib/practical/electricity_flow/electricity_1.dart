@@ -5,7 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
+import '../../screens/bottomNav.dart';
 import '../../screens/bottomsheet/electricBottomSheet.dart';
+import '../../screens/bottomsheet/electricBottomSheet_prepaid.dart';
 import '../dashboard/dash_1.dart';
 import 'electricity_flow2.dart';
 
@@ -17,11 +19,7 @@ class ElectricityFlow1 extends StatefulWidget {
 }
 
 class _ElectricityFlow1State extends State<ElectricityFlow1> {
-  List<String> Names = [
-   'Ibadan Electricity','Abuja Electricity','Ikeja Electricity',
-    'Benin Electricity','Yola Electricity','Eko Electricity','Jos Electricity',
-    'Kano Electricity','Port harcourt','Enugu Electricity','Kaduna Electricity'
-  ];
+
   
   @override
   Widget build(BuildContext context) {
@@ -39,7 +37,7 @@ class _ElectricityFlow1State extends State<ElectricityFlow1> {
               children: [
                 GestureDetector(
                    onTap: (){
-                     Get.to(Dash1());
+                     Get.to(BottomNav());
                    },
 
                     child: Icon(Icons.arrow_back)),
@@ -69,7 +67,7 @@ class _ElectricityFlow1State extends State<ElectricityFlow1> {
                         return const ElectricBottomSheet();
                      });
                      },
-                   icon: const Icon(Icons.add),
+                   icon:  Icon(Icons.arrow_drop_down),
                  )
                )
 
@@ -87,7 +85,17 @@ class _ElectricityFlow1State extends State<ElectricityFlow1> {
                         borderRadius: BorderRadius.circular(30)
                     ),
                     hintText: 'Prepaid',
-                    suffixIcon: Icon(Icons.arrow_drop_down_rounded)
+                    suffixIcon: IconButton(
+                      iconSize: 20.h,
+                      onPressed: (){
+                        showModalBottomSheet(context: context,
+                            builder: (context){
+                          return ElectricBottomSheet2();
+                        }
+                        );
+                      },
+                      icon:Icon(Icons.arrow_drop_down_sharp),
+                    )
                 )
                     )
                   ),
@@ -101,7 +109,17 @@ class _ElectricityFlow1State extends State<ElectricityFlow1> {
                                 borderRadius: BorderRadius.circular(30)
                             ),
                             hintText: 'Prepaid',
-                            suffixIcon: Icon(Icons.arrow_drop_down_rounded)
+                            suffixIcon: IconButton(
+                              iconSize: 20.h,
+                              onPressed: (){
+                                showModalBottomSheet(context: context,
+                                    builder: (context){
+                                      return ElectricBottomSheet2();
+                                    }
+                                );
+                              },
+                              icon:Icon(Icons.arrow_drop_down_sharp),
+                            )
                         )
                     )
                 ),

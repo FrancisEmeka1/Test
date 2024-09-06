@@ -34,6 +34,8 @@ dependencies:
   flutter_screenutil:
   gap:
   pin_code_fields: ^7.2.0
+  dotted_line: ^3.2.2
+  dio:
 
 
   # The following adds the Cupertino Icons font to your application.
