@@ -33,7 +33,7 @@ class _Pin_code_bulkDataState extends State<Pin_code_bulkData> {
             ),
             GestureDetector(
                 onTap: (){
-                  Get.to(BulkData2());
+                  Get.to(BulkRicharge2());
                 },
                 child: Icon(Icons.arrow_back)
 

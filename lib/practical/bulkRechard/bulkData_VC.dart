@@ -34,7 +34,7 @@ class _bulkDataVCState extends State<bulkDataVC> {
               ),
               GestureDetector(
                   onTap: (){
-                    Get.to( BulkData2());
+                    Get.to( BulkRicharge2());
                   },
 
                   child: Align(
@@ -42,7 +42,7 @@ class _bulkDataVCState extends State<bulkDataVC> {
                       child: Icon(Icons.arrow_back))
 
               ),
-              Gap(250),
+              Gap(100),
               CircleAvatar(
                 radius: 30,
                 backgroundImage: AssetImage('images/good.png'),

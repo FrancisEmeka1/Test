@@ -30,6 +30,7 @@ class _Dash1State extends State<Dash1> {
   final pageController = PageController();
   int currentIndex=0;
   bool isLoading =false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,7 +94,7 @@ class _Dash1State extends State<Dash1> {
                         ],
                       ),
                       Gap(1),
-                      Row(
+                      const Row(
                         children: [
                           Text('+₦1,309.25', style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400,
@@ -194,10 +195,12 @@ class _Dash1State extends State<Dash1> {
 
                       ),
                   ),
+
                   Gap(15),
                   GestureDetector(
                     onTap:(){
-                      Get.to(DataFlow1());
+                      // Get.to(DataFlow1());
+                      mappingHTTP();
                     },
 
 
@@ -227,7 +230,8 @@ class _Dash1State extends State<Dash1> {
                   Gap(15),
                   GestureDetector(
                     onTap: (){
-                      Get.to(Cable_Flow1());
+                      windHTTP();
+                      // Get.to(Cable_Flow1());
                     },
 
 
@@ -498,16 +502,46 @@ class _Dash1State extends State<Dash1> {
     );
   }
 
-  testingHTTP()async{
+  testingHTTP()async {
     setState(() {
-      isLoading=true;
+      isLoading = true;
     });
     final response = await dio.get('https://dart.dev');
     setState(() {
-      isLoading=false;
+      isLoading = false;
     });
     print(response);
   }
+    mappingHTTP()async{
+      setState(() {
+        isLoading=true;
+      });
+      final response = await dio.get('https://dog.ceo/api/breeds/image/random');
+      setState(() {
+        isLoading=false;
+      });
+      print(response);
+
+
+  }
+  windHTTP()async{
+    setState(() {
+      isLoading = true;
+    });
+      final response = await dio.get('https://ipinfo.io/161.185.160.93/geo');
+      setState(() {
+        isLoading=false;
+
+      });
+    print(response);
+
+    }
+
 }
+
+
+
+  
+
 List<String>adImage =['images/MTN.png','images/Airtel.png',
   'images/9mobile.png','images/glo.png'];

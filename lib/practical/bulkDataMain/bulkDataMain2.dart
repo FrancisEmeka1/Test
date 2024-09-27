@@ -1,3 +1,4 @@
+import 'package:billspaymentapp/screens/bottomNav.dart';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,16 +9,15 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../screens/bottomsheet/airtimeBottomsheet1.dart';
 import '../../screens/bottomsheet/bulkDataMainBottomSheet.dart';
 import '../dashboard/dash_1.dart';
-import 'bulkDataMain1.dart';
 
-class BulkDataMain2 extends StatefulWidget {
-  const BulkDataMain2({super.key});
+class BulkData2 extends StatefulWidget {
+  const BulkData2({super.key});
 
   @override
-  State<BulkDataMain2> createState() => _BulkDataMain2State();
+  State<BulkData2> createState() => _BulkData2State();
 }
 
-class _BulkDataMain2State extends State<BulkDataMain2> {
+class _BulkData2State extends State<BulkData2> {
   double lineLength= 130;
   double lineThickness= 3;
   double dashGapLength= 5;
@@ -38,7 +38,7 @@ class _BulkDataMain2State extends State<BulkDataMain2> {
                       children: [
                         GestureDetector(
                             onTap: (){
-                              Get.to(BulkDataMain1());
+                              Get.to(BottomNav());
 
                             },
 
@@ -65,26 +65,13 @@ class _BulkDataMain2State extends State<BulkDataMain2> {
                           ),
                         ),
                         Gap(20),
-                        GestureDetector(
-                          onTap: (){
-    showModalBottomSheet( builder:(context){
-    return Container(
-    height: 300.h,
-    child: BulkDataMainBottomSheet()
-    );
+                        Container(
+                          height: 79.h,
+                          width: 71.w,
+                          decoration:  BoxDecoration(
+                              image: DecorationImage
+                                (image: AssetImage('images/Mtn.m.png'))
 
-    },
-    context: context);
-    },
-
-                          child: Container(
-                            height: 79.h,
-                            width: 71.w,
-                            decoration:  BoxDecoration(
-                                image: DecorationImage
-                                  (image: AssetImage('images/Mtn.m.png'))
-
-                            ),
                           ),
                         ),
                         Gap(20),
@@ -114,7 +101,7 @@ class _BulkDataMain2State extends State<BulkDataMain2> {
                       height: 48.h,
                       width: 343.w,
                       child: TextField(
-                          keyboardType: TextInputType.multiline,
+                          keyboardType: TextInputType.phone,
 
                           decoration: InputDecoration(
                             labelText: '+123',
@@ -140,7 +127,7 @@ class _BulkDataMain2State extends State<BulkDataMain2> {
                         padding: const EdgeInsets.all(20.0),
                         child: Column(
                           children: [
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -185,7 +172,7 @@ class _BulkDataMain2State extends State<BulkDataMain2> {
                                           showModalBottomSheet( builder:(context){
                                             return Container(
                                                 height: 300.h,
-                                                child: AirtelBottomSheet()
+                                                child: BulkDataMainBottomSheet()
                                             );
 
                                           },

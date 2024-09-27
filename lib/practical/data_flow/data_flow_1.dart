@@ -6,6 +6,7 @@ import 'package:get/get_core/src/get_main.dart';
 
 import '../../screens/bottomNav.dart';
 import '../dashboard/dash_1.dart';
+import 'data_flow2.dart';
 
 class DataFlow1 extends StatefulWidget {
   const DataFlow1({super.key});
@@ -48,14 +49,19 @@ class _DataFlow1State extends State<DataFlow1> {
       ),
       Row(
       children: [
-      Container(
-      height: 79.h,
-      width: 71.w,
-      decoration:  BoxDecoration(
-      image: DecorationImage
-      (image: AssetImage('images/Airtel.a.png'))
+      GestureDetector(
+        onTap: (){
+          Get.to(Data_flow2());
+        },
+        child: Container(
+        height: 79.h,
+        width: 71.w,
+        decoration:  BoxDecoration(
+        image: DecorationImage
+        (image: AssetImage('images/Airtel.a.png'))
 
-      ),
+        ),
+        ),
       ),
       Gap(20),
       Container(

@@ -34,7 +34,7 @@ class _BulkDataMainVCState extends State<BulkDataMainVC> {
               ),
               GestureDetector(
                   onTap: (){
-                    Get.to(BulkDataMain2 ());
+                    Get.to(BulkData2 ());
                   },
 
                   child: Align(

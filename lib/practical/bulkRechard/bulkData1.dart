@@ -9,14 +9,14 @@ import '../dashboard/dash_1.dart';
 import '../onboarding_flow/container.dart';
 import 'bulkData2.dart';
 
-class BulkData extends StatefulWidget {
-  const BulkData({super.key});
+class BulkRicharge extends StatefulWidget {
+  const BulkRicharge({super.key});
 
   @override
-  State<BulkData> createState() => _BulkDataState();
+  State<BulkRicharge> createState() => _BulkRichargeState();
 }
 
-class _BulkDataState extends State<BulkData> {
+class _BulkRichargeState extends State<BulkRicharge> {
   TextEditingController textarea = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -233,7 +233,7 @@ class _BulkDataState extends State<BulkData> {
                   Gap(20),
                   GestureDetector(
                       onTap: (){
-                        Get.to(BulkData2 ());
+                        Get.to(BulkRicharge2 ());
                       },
                       child: CustomContainer())
 

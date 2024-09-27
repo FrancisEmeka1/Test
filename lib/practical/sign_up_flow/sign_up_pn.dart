@@ -40,7 +40,7 @@ class _SignUP_PNState extends State<SignUP_PN> {
             Gap(50),
             Container(
               height: 48.h,
-              width: 320.w,
+              width: 343.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
               ),
@@ -63,7 +63,7 @@ class _SignUP_PNState extends State<SignUP_PN> {
               },
               child: Container(
                 height: 48.h,
-                width: 320.w,
+                width: 343.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),color: Colors.blue.shade300,
                 ),
